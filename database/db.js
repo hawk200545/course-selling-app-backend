@@ -36,17 +36,23 @@ const AdminSchema = new mongoose.Schema({
 });
 
 const CourseSchema = new mongoose.Schema({
-  name: {
+  title: {
+    type: String,
+    required : true
+  },
+  description: {
     type: String,
   },
-  instructors: {
-    type: Array,
-    required: true,
+  imageURL : {
+    type : String
   },
   price: {
     type: Number,
     required: true,
   },
+  creatorId : {
+    type : String
+  }
 });
 
 const User = new mongoose.model('User',UserSchema);
